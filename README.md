@@ -1,3 +1,18 @@
+## A Hello React App
+*	Used class component because this application requires frequent state updates
+*	My state variable will be corresponding to the value that is going to be displayed
+*	ChangeName method is invoked whenever there is a change detected in the text box. It is bound to box’s OnChange() handler
+*	ChangeName will update the state variable with the current value from textbox
+*	Once the state is changed the render function is called with the updated state
+*	The displayed value in the format “hello” followed by the “current value in the textbox”
+
+### Instruction to run the application:
+
+*	Download the zip from the GitHub link
+*	Unzip the folder and change directory to ‘hello’
+*	Run `$npm install`
+*	Run `$npm start`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
