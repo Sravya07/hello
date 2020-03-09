@@ -1,23 +1,34 @@
-import React, {useRef, useState} from 'react';
+import React from 'react';
 
-function App() {
-  var [message, setMsg] = useState()
-  const nameRef = useRef()
-  
-  
-  function handleClick(e){
-    const name = "Hello "+ nameRef.current.value
-    
-    setMsg(name)
+class App extends React.Component {
+
+  state = { message: '' };
+  changeName = (e) => {
+    const currVal = e.target.value;
+    this.setState({ message: currVal });
   }
 
-  return (
-    <div className="App">
-      <input ref={nameRef} type="text" />
-      <button onClick={handleClick}> Click </button>
-      <p> {message} </p>
-    </div>
-  );
-}
+  render() {
+    const { message } = this.state;
+    return (
+      <div
+        className="App">
+        <div>
 
+          <p>Type something..</p>
+          <input
+            onChange={this.changeName}
+            type="text"/>
+
+        </div>
+
+        {message && <p>Hello {message}</p>}
+
+      </div>
+
+    )
+
+  };
+
+}
 export default App;
