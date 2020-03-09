@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useRef, useState} from 'react';
 
 function App() {
+  var [message, setMsg] = useState()
+  const nameRef = useRef()
+  
+  
+  function handleClick(e){
+    const name = "Hello "+ nameRef.current.value
+    
+    setMsg(name)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input ref={nameRef} type="text" />
+      <button onClick={handleClick}> Click </button>
+      <p> {message} </p>
     </div>
   );
 }
